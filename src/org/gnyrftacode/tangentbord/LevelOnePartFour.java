@@ -4,7 +4,7 @@ public class LevelOnePartFour {
 
 public void initiate(){
 	MainWindow.clearTextFields();
-	MainWindow.setInstructionOne("Placera markören (blinkande sak) i textfältet \n nedanför genom att vänsterklicka i fältet");
+	MainWindow.setInstructionOne("Placera markören (blinkande sak) i textfältet \n nedanför genom att vänsterklicka i fältet.");
 	MainWindow.setInstructionTwo("Använd fingersättningen du just övat för att skriva dessa ord i textfältet:");
 	MainWindow.setTextToCopy("dass fasa kasa sak sal dal öl föl");  
 	MainWindow.done.setActionCommand("levelOnePartFive");

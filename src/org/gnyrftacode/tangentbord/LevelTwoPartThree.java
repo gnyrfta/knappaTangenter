@@ -6,8 +6,8 @@ public void initiate(){
 	MainWindow.clearTextFields();
 	MainWindow.setInstructionOne("");
 	MainWindow.buttonImage.setVisible(true);
-	MainWindow.setInstructionTwo("Vissa knappar, som den ovan, har flera tecken. Shift ger tecknet uppe till vänster, i det här fallet ?");
-	MainWindow.setTextToCopy("Skriv: Kan du hitta flera tecken som man måste använda skift för att använda?");  
+	MainWindow.setInstructionTwo("Vissa knappar, som den ovan, har flera tecken. Shift ger tecknet uppe till vänster, i detta fall: ?");
+	MainWindow.setTextToCopy("Skriv: Kan du hitta flera tecken som man måste använda skift för att komma åt?");  
 	MainWindow.done.setActionCommand("levelTwoPartFour");
 	MainWindow.textToCopy.setVisible(true);
 	MainWindow.wordOne.setVisible(true);

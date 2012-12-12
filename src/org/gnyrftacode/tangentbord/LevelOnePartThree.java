@@ -6,7 +6,7 @@ public void initiate(){
 	MainWindow.clearTextFields();
 	MainWindow.setInstructionOne("Låt tummarna vila på MELLANSLAG (den långa knappen).");
 	MainWindow.setInstructionTwo("<html><br><br>Lägg på och av fingrarna med denna fingerställning några gånger.");
-	MainWindow.setTextToCopy("JKLÖ");  
+	MainWindow.setTextToCopy("");  
 	MainWindow.done.setActionCommand("levelOnePartFour");
 	MainWindow.part=3;
 }

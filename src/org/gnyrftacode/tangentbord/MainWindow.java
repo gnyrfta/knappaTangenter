@@ -26,7 +26,7 @@ public class MainWindow extends JPanel implements ActionListener {
 	static JTextField wordNine;
 	
 	public static JButton done;
-	/*public static JButton back;*/
+	public static JButton back;
 	static JButton exit;
 	
 	public static int level = 1;
@@ -40,16 +40,19 @@ public class MainWindow extends JPanel implements ActionListener {
 		Color c = new Color(255,255,153);
 		newContentPane.setBackground(c);
 		frame.setContentPane(newContentPane);
-	//	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		frame.setPreferredSize(new Dimension(800,300));
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		frame.setSize(new Dimension(screenSize.width,screenSize.height));
 		frame.setVisible(true);
+		
 	}	
 	public MainWindow(){
 		super (new GridBagLayout());
 		GridBagLayout gridbag = (GridBagLayout)getLayout();
 		GridBagConstraints c = new GridBagConstraints();
 		
-		instructionOne = new JLabel("<html><br><br>Klicka med vänster musknapp på START-knappen för att starta programmet.");
+		
+		
+		instructionOne = new JLabel("<html><br><br>Klicka med vänster musknapp på STARTA-knappen för att starta programmet.");
 		instructionOne.setFont(new Font("Verdana",Font.PLAIN,18));
 		c.gridx = 0;
 		c.gridy = 0;
@@ -141,13 +144,14 @@ public class MainWindow extends JPanel implements ActionListener {
 		wordNine.setPreferredSize(new Dimension(120,24));		
 		add(wordNine,c);*/
 		
-	/*	back = new JButton("Bakåt");
+		back = new JButton("Bakåt");
 		c.gridx = 0;
 		c.gridy = 5;
 		gridbag.setConstraints(back,c);
 		back.addActionListener(this);
 		back.setActionCommand("back");
-		add(back,c);*/
+		back.setVisible(false);
+		add(back,c);
 		
 		done = new JButton("<html><b>STARTA</b>");
 		c.gridx = 0;
@@ -199,11 +203,20 @@ public class MainWindow extends JPanel implements ActionListener {
 		if (e.getSource()instanceof JButton) {
 			if ("go".equals(e.getActionCommand())){
 				System.out.println("go");
-				LevelOnePartOne lopo = new LevelOnePartOne();
-				lopo.initiate();
+				LevelOnePartZero lopz = new LevelOnePartZero();
+				lopz.initiate();
 			}
 			if ("back".equals(e.getActionCommand())){
+				System.out.println("level: "+level);
+				System.out.println("part: "+part);
 				if (level == 1){
+					if (part == 0){
+						MainWindow.setInstructionTwo("Du kan ju inte backa nu, du har ju precis börjat! Fortsätt nu...");
+					}
+					if (part == 1){
+						LevelOnePartZero lopz = new LevelOnePartZero();
+						lopz.initiate();
+					}
 					if (part == 2){
 						LevelOnePartOne lopo = new LevelOnePartOne();
 						lopo.initiate();
@@ -266,6 +279,10 @@ public class MainWindow extends JPanel implements ActionListener {
 
 				}
 			}
+			if ("levelOnePartOne".equals(e.getActionCommand())){
+				LevelOnePartOne lopo = new LevelOnePartOne();
+				lopo.initiate();
+			}
 			if ("levelOnePartTwo".equals(e.getActionCommand())){
 				LevelOnePartTwo lopt = new LevelOnePartTwo();
 				lopt.initiate();
@@ -322,6 +339,9 @@ public class MainWindow extends JPanel implements ActionListener {
 			if ("levelTwoPartEight".equals(e.getActionCommand())){
 				LevelTwoPartEight ltpe = new LevelTwoPartEight();
 				ltpe.initiate();
+			}
+			if ("exit".equals(e.getActionCommand())){
+				System.exit(0);
 			}
 		}
 	}

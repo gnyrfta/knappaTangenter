@@ -8,8 +8,10 @@ public void initiate(){
 	MainWindow.setInstructionOne("Det här är den sista övningen!");
 	MainWindow.buttonImage.setVisible(false);
 	MainWindow.setInstructionTwo("");
-	MainWindow.setTextToCopy("Skriv: Jahopp, det var det (en omotiverad parentes som den här, som innehåller både $ ¤ och ! avskyr svenskalärare)!");  
-	MainWindow.done.setActionCommand("levelTwoPartEight");
+	MainWindow.wordOne.setSize(700,24);
+	MainWindow.done.setText("Avsluta");
+	MainWindow.setTextToCopy("Skriv: Klar (en omotiverad parentes som innehåller $ ¤ och ! avskyr svenskalärare)!");  
+	MainWindow.done.setActionCommand("exit");
 	MainWindow.textToCopy.setVisible(true);
 	MainWindow.wordOne.setVisible(true);
 	MainWindow.wordOne.requestFocus();

@@ -4,9 +4,10 @@ public class LevelOnePartTwo {
 
 public void initiate(){
 	MainWindow.clearTextFields();
+	MainWindow.setInstructionOne("");
 	MainWindow.setInstructionTwo("<html><br><br>Lägg höger pekfinger på 'J', höger långfinger på 'K'," +
 				"höger ringfinger på 'L' och höger lillfinger på 'Ö'.");
-	MainWindow.setTextToCopy("JKLÖ");  
+	MainWindow.setTextToCopy("");  
 	MainWindow.done.setActionCommand("levelOnePartThree");
 	MainWindow.part=2;
 }
